@@ -1,0 +1,66 @@
+<div class="col-md-6 offset-md-3 mt-5">
+        <div class="card">
+            <h4 class="card-header">IPL SKILLATHON</h4>
+            <div style="padding-left: 5cm">
+                <img src="assets/images/logo.png" style="width: 40%"  />
+            </div>
+    
+            <div class="card-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" formControlName="name" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" formControlName="username" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                                <div *ngIf="f.username.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="password" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" formControlName="confirmpassword" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.confirmpassword.errors }" />
+                                <div *ngIf="submitted && f.confirmpassword.errors" class="invalid-feedback">
+                                        <div *ngIf="f.confirmpassword.errors.required">Confirm Password is required</div>
+                                        <div *ngIf="f.confirmpassword.errors.mustMatch">Passwords must match</div>
+                                    </div>
+                        </div>
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        SignUp
+                    </button>
+
+                    <a routerLink = "/">
+                        <button style= "margin:10px" class= "btn btn-primary ">
+                            <div class = " mr-1">
+                                Login
+                            </div>
+                        </button>
+                    </a>
+    
+                    
+                    
+    
+                    <!-- <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    >

@@ -1,0 +1,73 @@
+<p>opponent works!</p>
+
+
+
+<form [formGroup]="opponentForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+        <input [ngClass] = "{'is-invalid' : similar && opponentForm.get('team1').invalid}" formControlName="team1" 
+        list="team1" name="team1" placeholder ="Choose Team 1">
+
+        
+                <div *ngIf = "opponentForm.get('team1').invalid && opponentForm.get('team1').touched">Select an option</div>
+                    
+            
+            <datalist id="team1">
+                <option value="Rising Pune Supergiants">
+                <option value="Rajasthan Royals">
+                <option value="Kochi Tuskers Kerala">
+                <option value="Deccan Chargers">
+                <option value="Chennai Super Kings">
+                <option value="Kolkata Knight Riders">
+                <option value="Pune Warriors">   
+                <option value="Mumbai Indians">
+                <option value="Delhi Capitals">
+                <option value="Gujarat Lions">
+                <option value="Royal Challengers Bangalore">
+                <option value="Sunrisers Hyderabad">
+                <option value="Kings XI Punjab">
+                <option value="Delhi Daredevils">
+            </datalist>
+            </div>
+
+           
+
+            <div class="form-group">
+            <input [ngClass] = "{ 'is-invalid' : similar && opponentForm.get('team2').invalid}" 
+               formControlName="team2" 
+            list="team2" name="team2" placeholder ="Choose Team 2">
+
+            <div *ngIf = "opponentForm.get('team2').invalid && opponentForm.get('team2').touched">Select an option</div>
+            <datalist id="team2">
+                <option value="Rising Pune Supergiants">
+                <option value="Rajasthan Royals">
+                <option value="Kochi Tuskers Kerala">
+                <option value="Deccan Chargers">
+                <option value="Chennai Super Kings">
+                <option value="Kolkata Knight Riders">
+                <option value="Pune Warriors">   
+                <option value="Mumbai Indians">
+                <option value="Delhi Capitals">
+                <option value="Gujarat Lions">
+                <option value="Royal Challengers Bangalore">
+                <option value="Sunrisers Hyderabad">
+                <option value="Kings XI Punjab">
+                <option value="Delhi Daredevils">
+
+                
+            </datalist>
+            
+            </div>
+
+            <div *ngIf="similar && submitted && opponentForm.get('team1').touched &&opponentForm.get('team2').touched" 
+            > Team Name must be different
+                  
+                </div>
+            <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Submit
+                </button>
+
+            <div *ngIf = "matches">Total matches: {{matches}}</div>
+
+
+  </form> 

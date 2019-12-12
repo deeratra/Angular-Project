@@ -1,0 +1,75 @@
+<style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+    
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 10;
+            left: 0;
+            background: -webkit-linear-gradient(-45deg, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 45%, rgba(159, 216, 239, 1) 68%, rgba(42, 176, 237, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedbe9', endColorstr='#26558b', GradientType=0);
+            overflow-x: hidden;
+            padding-top: 150px;
+        }
+    
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #3025258e;
+            display: block;
+        }
+    
+        .sidenav a:hover {
+            color: #e1f00c;
+        }
+    
+        .main {
+            margin-left: 40px;
+            /* Same as the width of the sidenav */
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+    
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+    
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    
+    <body>
+        <app-header></app-header>
+    
+        <nav class="sidenav">
+            <a routerLink="/sidebar/overview">Overview</a>
+            <a routerLink="/sidebar/batsman_score">Batsman Score</a>
+            <!-- <a routerLink="/sidebar/Batsman_Ranking">Batsman Ranking</a> -->
+            <a routerLink="/sidebar/opponent">Team1 vs Team 2</a>
+            <!-- <a href="#Batsman_Score_Chart">Batsman Score Chart</a> -->
+            <!-- <a href="#Batsman_Ranking_Chart">Batsman Ranking Chart</a> -->
+            <!-- <a href="#Team1_vs_Team2_Chart">Team1 vs Team 2 Chart</a> -->
+        </nav>
+        
+    
+        <div class="main">
+
+        </div>
+
+        <div style="padding: 12%">
+                <router-outlet>
+                    </router-outlet>
+            </div>
+        
+        
+    
+    </body>
