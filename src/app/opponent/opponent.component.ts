@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { OpponentService } from '../_service/opponentService'
 
+
 @Component({
   selector: 'app-opponent',
   templateUrl: './opponent.component.html',
@@ -17,12 +18,14 @@ export class OpponentComponent implements OnInit {
   similar = false;
   submitted = false;
   match = false ;
-  matches :string;
+  matches :any;
   win1 : string;
   win2 : string;
   lose1 : string;
   lose2 : string;
   noresult : string;
+
+
 
   constructor(
     private opponentService : OpponentService
@@ -40,9 +43,6 @@ export class OpponentComponent implements OnInit {
   onSubmit(){
     
     this.submitted = true;
-
-    console.log("hi   z"+this.opponentForm.controls.team2.value)
-    console.log("hi   z"+this.opponentForm.controls.team1.value)
     if(this.opponentForm.controls.team2.value == this.opponentForm.controls.team1.value)
       {
         console.log("TTTTRRRUEEEE");
@@ -57,8 +57,8 @@ export class OpponentComponent implements OnInit {
             if(data)
             {
               this.match=true;
-              console.log(data);
-              this.matches=data.toString();
+              console.log('data'+data.toString());
+              this.matches=data;
             }
             
           })

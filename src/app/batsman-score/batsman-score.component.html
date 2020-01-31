@@ -19,7 +19,12 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
           <td mat-cell *matCellDef="let element"> {{element.total}} </td>
         </ng-container>
+
+        <ng-container matColumnDef="balls">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Balls </th>
+            <td mat-cell *matCellDef="let element"> {{element.balls}} </td>
+          </ng-container>
      
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
+</table>

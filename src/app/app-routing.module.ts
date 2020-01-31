@@ -9,6 +9,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { BatsmanScoreComponent } from './batsman-score/batsman-score.component';
 import { OpponentComponent } from './opponent/opponent.component';
 import { AuthGuard } from './auth.guard';
+import { SearchPlayerComponent } from './search-player/search-player.component';
 
 
 const routes: Routes = [
@@ -38,10 +39,13 @@ const routes: Routes = [
       { path:'', redirectTo:'overview',pathMatch:'full', },
       { path:'overview', component: OverviewComponent,},
       { path :'batsman_score', component:BatsmanScoreComponent},
-      { path :'opponent', component:OpponentComponent }
+      { path :'opponent', component:OpponentComponent },
+      { path :'search', component:SearchPlayerComponent},
+      
     
     ]
   },
+  
   {
     path :'header',
     component: HeaderComponent

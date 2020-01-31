@@ -57,7 +57,6 @@ export class LoginComponent implements OnInit {
             {
                 console.log("Data"+ data);
                 localStorage.setItem('token', data.token)
-                // console.log("Token Set in ts login")
                 localStorage.setItem('name',this.f.username.value)
                 this.router.navigate(['/sidebar'])
             }
@@ -70,9 +69,6 @@ export class LoginComponent implements OnInit {
             this.error = true
             console.log("Error ispreseent")
         });
-
-
-        
        
     }
 }

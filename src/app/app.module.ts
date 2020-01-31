@@ -22,6 +22,9 @@ import { AuthenticationService } from './_service/authenticationService';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service'
 import { RouterModule } from '@angular/router';
+import { MatchDetailsComponent } from './match-details/match-details.component';
+import { SearchPlayerComponent } from './search-player/search-player.component';
+// import { AComponent } from './a/a.component';
 
 
 
@@ -35,7 +38,10 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     OverviewComponent,
     BatsmanScoreComponent,
-    OpponentComponent
+    OpponentComponent,
+    MatchDetailsComponent,
+    SearchPlayerComponent,
+    
   ],
   imports: [
     BrowserModule,

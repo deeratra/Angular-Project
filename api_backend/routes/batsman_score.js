@@ -6,7 +6,7 @@ var runs = require('../models/deliveries');
 
 router.get('/', (req,res)=>{
 
-    console.log("I am");
+    // console.log("I am");
     var total = [];
     var batsman = [];
               db.collection('deliveries').aggregate([
@@ -14,7 +14,8 @@ router.get('/', (req,res)=>{
                     {
                         "$group":{
                             "_id" : "$batsman",
-                            "total" : { "$sum" :"$batsman_runs"}
+                            "total" : { "$sum" :"$batsman_runs"},
+                            "balls" : { "$sum" : 1     }
                         }
                     }
                 ]).toArray(
@@ -22,7 +23,7 @@ router.get('/', (req,res)=>{
             {
                 if(data)
                 {
-                    console.log(data);
+                   // console.log(data);
                     res.send(data);
                 }
 

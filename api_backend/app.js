@@ -14,7 +14,7 @@ var registerRouter = require('./routes/register')
 var overviewRouter = require('./routes/overview')
 var batsman_scoreRouter = require('./routes/batsman_score')
 var opponentRouter = require('./routes/opponent')
-
+var searchRouter = require('./routes/search')
 var mongoose = require('mongoose');
 var url = "mongodb://localhost:27017/test1";
 var db;
@@ -67,7 +67,7 @@ app.use('/users', usersRouter);
 
 
 app.get('/', (req,res)=>{
-  console.log("In backdeeend");
+  console.log("In backdend");
 })
 
 app.use('/register', registerRouter)
@@ -75,6 +75,7 @@ app.use('/login', loginRouter);
 app.use('/overview',verifyToken, overviewRouter)
 app.use('/batsman_score',verifyToken, batsman_scoreRouter)
 app.use('/opponent', verifyToken, opponentRouter)
+app.use('/search', searchRouter)
 
 
 module.exports = app;

@@ -18,7 +18,7 @@ export class AuthenticationService {
 
     login(username:string, password:string)
     {
-        console.log("Hello");
+        //console.log("Hello");
 
        // this.httpClient.get<any>(`http://localhost:3000/.`).subscribe((x)=> {console.log(x);});
         return this.httpClient.post<any>(`http://localhost:3000/login`,{username,password})

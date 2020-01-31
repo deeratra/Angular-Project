@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ipl';
+
+  animal = [
+    {
+      name:'bee',
+      work: 'cee'
+    },
+    {
+      name:'tiger',
+      work:'eat'
+    }
+  ]
+
+  awesomeMethod(event)
+  {
+    console.log(event,'H from parent')
+  }
 }

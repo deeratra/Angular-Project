@@ -1,7 +1,3 @@
-<p>opponent works!</p>
-
-
-
 <form [formGroup]="opponentForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
         <input [ngClass] = "{'is-invalid' : similar && opponentForm.get('team1').invalid}" formControlName="team1" 
@@ -67,7 +63,10 @@
                     Submit
                 </button>
 
-            <div *ngIf = "matches">Total matches: {{matches}}</div>
+            <div *ngIf = "matches">Total matches: {{matches.matches}}</div>
+            <div *ngIf = "opponentForm.get('team1').value && matches" >{{this.opponentForm.controls.team1.value}}:{{matches.team1}}</div>
+            <div *ngIf = "opponentForm.get('team2').value && matches" >{{this.opponentForm.controls.team2.value}}:{{matches.team2}}</div>
+            <div *ngIf = "matches">No Result:{{matches.tie}} </div>
 
 
   </form> 

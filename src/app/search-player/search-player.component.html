@@ -1,0 +1,30 @@
+<h1>
+    Enter Player Name:
+</h1>
+
+
+
+
+     <form [formGroup] = "searchPlayer" (ngSubmit)="onSubmit()">
+        <div class= "formGroup">
+                    
+                <div class="typeHead">
+                        <input type="text" list="search" name="search" formControlName="search" />
+                        <datalist id="search">
+                            <select>
+                                <option *ngFor="let c of playerList" [value]="c._id"></option>
+                            </select>
+                        </datalist>
+                    </div>
+
+                    <button>Submit</button>
+            </div>
+            
+    </form>
+  
+
+  
+    
+  <!-- </div> -->
+
+  
