@@ -72,7 +72,7 @@ app.get('/', (req,res)=>{
 
 app.use('/register', registerRouter)
 app.use('/login', loginRouter);
-app.use('/overview',verifyToken, overviewRouter)
+app.use('/overview', overviewRouter)
 app.use('/batsman_score',verifyToken, batsman_scoreRouter)
 app.use('/opponent', verifyToken, opponentRouter)
 app.use('/search', searchRouter)

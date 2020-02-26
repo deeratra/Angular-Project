@@ -10,20 +10,4 @@ export class DataService {
 
     data$  = this.subject.asObservable();
 
-    // func()
-    // {
-    //         this.data$.subscribe(val =>{
-    //             console.log('value'+val);
-    //         })
-            
-            
-    // }
-
-  
-    
-
-
-    
-    
-
 }

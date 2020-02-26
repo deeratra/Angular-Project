@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Ng2SmartTableModule } from 'ng2-smart-table'
 // import { MatTableModule} from '@angular/material/table';
 import { MatInputModule, MatProgressSpinnerModule, MatPaginatorModule,
-  MatSortModule, MatTableModule } from '@angular/material';
+  MatSortModule, MatTableModule, MatCheckboxModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +40,7 @@ import { SearchPlayerComponent } from './search-player/search-player.component';
     BatsmanScoreComponent,
     OpponentComponent,
     MatchDetailsComponent,
-    SearchPlayerComponent,
+    SearchPlayerComponent
     
   ],
   imports: [
@@ -59,6 +59,7 @@ import { SearchPlayerComponent } from './search-player/search-player.component';
     MatSortModule,
     MatProgressSpinnerModule,
     //MatTableDataSource,
+    MatCheckboxModule
   ],
   providers: [AuthenticationService, AuthGuard,
   {
