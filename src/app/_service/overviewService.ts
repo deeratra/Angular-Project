@@ -7,7 +7,7 @@ import { Register } from '../register/registerModel';@Injectable({ providedIn: '
 export class OverviewService {
 
     TableData$ = new BehaviorSubject<any>(null);
-    Afterrefresh$ = new BehaviorSubject<any>(null);
+    Afterrefresh$ = new BehaviorSubject<boolean>(null);
     data : any;
     constructor(private http: HttpClient, private httpClient: HttpClient
         ){}
@@ -29,5 +29,11 @@ export class OverviewService {
         
       return this.httpClient.delete<any>(`http://localhost:3000/overview/delete/${id}`)
             
+    }
+
+    update(id:number, el:any){
+
+        console.log(el)
+        return this.httpClient.put<boolean>(`http://localhost:3000/overview/update/${id}`,el);
     }
 }

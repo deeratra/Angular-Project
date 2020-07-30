@@ -70,11 +70,13 @@ router.post('/', async(req,res)=>{
                  
               }
           
-              else{
-              console.log("err"+err);
-              oppo.matches=0;
-             reject(err)
-              }
+              else {
+                // console.log("error" + err);
+                if(err===null)
+                return resolve(0);
+                else
+                return reject(err);
+            }
           }
           )
      })
@@ -105,8 +107,13 @@ router.post('/', async(req,res)=>{
                 return res(data);
                 
             }
-            else
-            oppo.team1=0;
+            else {
+                // console.log("error" + err);
+                if(err===null)
+                return res(0);
+                else
+                return reject(err);
+            }
         
     })
  })
@@ -135,8 +142,13 @@ function getteam2(req){
                     console.log('team2 '+data);                   
                     return res(data);    
                 }
-            else
-                oppo.team2=0;
+                else {
+                    // console.log("error" + err);
+                    if(err===null)
+                    return res(0);
+                    else
+                    return reject(err);
+                }
             
             
         });

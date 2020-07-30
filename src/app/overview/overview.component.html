@@ -1,9 +1,9 @@
-overview works!!
-<mat-form-field>Search
-    <input type="text" matInput (keyup)="applyFilter($event.target.value)">
-  </mat-form-field>
+<h2 style="text-align:center" class="pt2">Match Statistics</h2><br>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <input type="search" style="width:99%" placeholder="Search" (keyup)="applyFilter($event.target.value)">
+  
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"> 
 
         <ng-container matColumnDef="select" style="color:green">
           <th mat-header-cell *matHeaderCellDef>
@@ -55,17 +55,37 @@ overview works!!
                 <td mat-cell *matCellDef="let element"> {{element.winner}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="venue">
+        <!-- <ng-container matColumnDef="venue">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Venue </th>
                 <td mat-cell *matCellDef="let element"> {{element.venue}} </td>
-        </ng-container>
-      
+        </ng-container> -->
+    
+          <!-- Comment Column -->
+          <ng-container matColumnDef="venue">
+            <th mat-header-cell *matHeaderCellDef> Venue </th>
+            <td mat-cell *matCellDef="let element" [satPopoverAnchor]="p" (click)="p.open()">
+              <ng-container *ngIf="element.venue">
+                {{element.venue}}
+              </ng-container>
+              <span class="add-comment" *ngIf="!element.venue">
+                Add a comment
+              </span>
+    
+              <sat-popover #p
+                  hasBackdrop
+                  xAlign="start"
+                  yAlign="start"
+                  (closed)="update(element, $event)">
+                <inline-edit [value]="element.Venue"></inline-edit>
+              </sat-popover>
+            </td>
+          </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"
           (click)="selection.toggle(row)">
       </tr>
       </table>
-        <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons></mat-paginator>
+          
       
         <button style="background: #3B4990; color:white;" (click)="removeSelectedRows()">Delete</button>
        

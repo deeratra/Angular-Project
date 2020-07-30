@@ -1,0 +1,15 @@
+
+
+.auth-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .size{
+    height:0px;
+  }
+
+  .spacing{
+    border-collapse:separate; 
+    border-spacing:0 15px; 
+ }

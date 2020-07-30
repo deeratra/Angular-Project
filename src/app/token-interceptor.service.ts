@@ -13,7 +13,7 @@ export class TokenInterceptorService implements HttpInterceptor{
 
   intercept(req,next){
 
-    console.log('Where am ')
+    
 
     let authService = this.injector.get(AuthenticationService)
     let tokenizedReq = req.clone({
@@ -21,7 +21,7 @@ export class TokenInterceptorService implements HttpInterceptor{
          Authorization: `Bearer ${authService.getToken()}`
       }
     })
-    console.log('token' + tokenizedReq)    
+      
     return next.handle(tokenizedReq)
     
   }

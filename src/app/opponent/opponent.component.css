@@ -1,3 +1,39 @@
 input.ng-invalid.ng-touched {
     border: 1px solid red;
  }
+
+ 
+ 
+
+ 
+ .center{
+    /* color:green; */
+    display: flex;
+ align-items: center;
+ justify-content: center;
+ padding-top: 21%
+}
+
+ .button1{
+     color: blueviolet
+ }
+ .flex-container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ .box{
+   padding-left: 3%;
+   padding-right:3%;
+   padding-top:3%;
+   /* size: 276px 45px; */
+   
+   /* margin: 0 auto; */
+ }
+ .padding{
+    padding-left: 20%;
+ }
+.spacing{
+   border-collapse:separate; 
+   border-spacing:0 15px; 
+}

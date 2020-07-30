@@ -2,10 +2,42 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from  '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { Ng2SmartTableModule } from 'ng2-smart-table'
-// import { MatTableModule} from '@angular/material/table';
-import { MatInputModule, MatProgressSpinnerModule, MatPaginatorModule,
-  MatSortModule, MatTableModule, MatCheckboxModule } from '@angular/material';
+
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+  import { SatPopoverModule } from '@ncstate/sat-popover';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +56,8 @@ import { TokenInterceptorService } from './token-interceptor.service'
 import { RouterModule } from '@angular/router';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { SearchPlayerComponent } from './search-player/search-player.component';
+// import {MatNativeDateModule} from '@angular/material/core';
+import { InlineEditComponent } from './inline-edit/inline-edit.component';
 // import { AComponent } from './a/a.component';
 
 
@@ -40,7 +74,8 @@ import { SearchPlayerComponent } from './search-player/search-player.component';
     BatsmanScoreComponent,
     OpponentComponent,
     MatchDetailsComponent,
-    SearchPlayerComponent
+    SearchPlayerComponent,
+    InlineEditComponent
     
   ],
   imports: [
@@ -52,14 +87,40 @@ import { SearchPlayerComponent } from './search-player/search-player.component';
   //  Ng2SmartTableModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Ng2SmartTableModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
     MatInputModule,
-    MatTableModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
     MatPaginatorModule,
-    MatSortModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
-    //MatTableDataSource,
-    MatCheckboxModule
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    SatPopoverModule,
+
   ],
   providers: [AuthenticationService, AuthGuard,
   {

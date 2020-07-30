@@ -1,16 +1,18 @@
-﻿<div class="col-md-6 offset-md-3 mt-5">
-    <div class="card">
+﻿
+
+<div class="col-md-6 offset-md-3 mt-5 md-5" style = 'color : orange'>
+    <div class="card" style ='background: rgb(0,0,0,0.9)' >
         <h4 class="card-header">IPL SKILLATHON</h4>
-        <div style="padding-left: 5cm">
+        <div style="padding-left: 7cm">
             <img src="assets/images/logo.png" style="width: 40%"  />
         </div>
 
-        <div class="card-body">
+        <div class="card-body" style = 'color : orange'>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" formControlName="username" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        [ngClass]=" { 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">Username is required</div>
                         <div *ngIf="f.username.errors.email">Username is not valid</div>
@@ -24,6 +26,8 @@
                         <div *ngIf="f.password.errors.required">Password is required</div>
                     </div>
                 </div>
+
+                
                 <button [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Login

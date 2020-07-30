@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, ViewChild } from '@angular/core';
 import { BatsmanScoreService } from '../_service/batsman_scoreService';
 import { DataService } from '../_service/dataService';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
@@ -32,6 +32,8 @@ export class BatsmanScoreComponent implements OnInit {
   displayedColumns:string[] = ['_id','total','balls'];
   dataSource:  MatTableDataSource<PeriodicElement>;
 
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
   constructor(private batsman_scoreService: BatsmanScoreService, private dataService:DataService) { }
 
   ngOnInit() {
@@ -40,7 +42,8 @@ export class BatsmanScoreComponent implements OnInit {
       {
         this.dataSource= new MatTableDataSource(data);
         this.player =data;
-        this.dataService.subject.next(data);
+        this.dataSource.sort= this.sort;
+        this.dataService.subject.next(data);       
 
         
       }

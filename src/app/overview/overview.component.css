@@ -11,3 +11,13 @@ th.mat-sort-header-sorted {
   width: 100%;
 }
 
+.mat-row:nth-child(even){
+  background-color:aqua;
+  }
+
+.mat-row:nth-child(odd){
+  background-color:rgb(245, 255, 255);
+  }
+  .add-comment {
+    opacity: 0.4;
+  }

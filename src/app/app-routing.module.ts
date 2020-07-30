@@ -31,13 +31,16 @@ const routes: Routes = [
     path :'register',
     component : RegisterComponent
   },
+ 
   {
     path :'sidebar',
     component: SidebarComponent,
     canActivate :[AuthGuard],
     children :[
-      { path:'', redirectTo:'overview',pathMatch:'full', },
-      { path:'overview', component: OverviewComponent,},
+      {
+        path : '', component:HomeComponent
+      },
+      { path :'overview', component: OverviewComponent},
       { path :'batsman_score', component:BatsmanScoreComponent},
       { path :'opponent', component:OpponentComponent },
       { path :'search', component:SearchPlayerComponent},

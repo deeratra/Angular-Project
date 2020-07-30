@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'C:/Users/764957/ipl/src/app/_service/authenticationService';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  userDisplayName='';
+
+  constructor(private authenticationService : AuthenticationService) { }
 
   ngOnInit() {
+    this.userDisplayName = localStorage.getItem('name');
   }
 
 }

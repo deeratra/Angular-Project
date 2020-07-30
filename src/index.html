@@ -12,18 +12,33 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+  <link rel="stylesheet" href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" >
+
 
 </head>
 
 <style>
   .bdy {
-      background: -webkit-linear-gradient(-45deg, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 45%, rgba(159, 216, 239, 1) 68%, rgba(42, 176, 237, 1) 100%);
-      background-repeat: round;
+      /* background: -webkit-linear-gradient(-45deg, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 45%, rgba(159, 216, 239, 1) 68%, rgba(42, 176, 237, 1) 100%); */
+      /* background: rgb(254,224,170);
+background: linear-gradient(90deg, rgba(254,224,170,1) 0%, rgba(255,165,0,1) 100%); */
+/* background-image: url('assets/images/bckgrnd.jpg');
+background-position: center center; */
+/* background-size: 100% 100%; */
+      /* background-repeat: no-repeat; */
+
+      background: url('assets/images/bckgrnd.jpg') no-repeat center center fixed #000; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+      
+      
   }
 </style>
-
 <body class="bdy">
-
 
   <app-root></app-root>
 </body>

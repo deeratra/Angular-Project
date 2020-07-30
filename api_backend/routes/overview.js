@@ -6,7 +6,7 @@ var router = express.Router();
  var app = require('../app')
 
  router.get('/getData', (req,res)=>{
-     console.log('ddd')
+    //  console.log('ddd')
     mathches.find({}, (err,data) =>
     {
         if(err)
@@ -34,11 +34,45 @@ router.delete('/delete/:id',(req,res)=>{
     }
 
     console.log(arr)
-db.collection('mathches').remove({'id':{'$in':arr}})
-    //console.log(req.params.id)
-     res.send(JSON.stringify('delete'))
+    db.collection('mathches').remove({'id':{'$in':arr}},(err,data)=>{
+        if(err)
+        console.log(err)
+
+        else
+        {
+            console.log(data.result)
+            res.send(JSON.stringify('delete'))
+        }
+    })
+    //  res.send(JSON.stringify('delete'))
     
     
+})
+
+
+router.put('/update/:id',(req,res)=>{
+
+    
+ 
+    var id1 = req.params.id
+    db.collection('mathches').
+    updateOne({id: parseInt(req.params.id)},
+    {$set:{venue:req.body.venue}}
+   
+, (err,data)=>{
+        if(err)
+            console.log(err)
+        
+            else{
+                console.log(data.result.nModified);
+                if(data.result.nModified)
+               res.send(true)
+               else
+               res.send(false)
+            }
+
+    })
+
 })
 
     

@@ -1,12 +1,14 @@
-<h1>
-    Enter Player Name:
-</h1>
+
+        <div class="card" class="mt-6 md-5" style="height:100%" >
+                <h2 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 35px"
+                class="pt6 pl7 font">ENTER PLAYER NAME</h2>
 
 
 
+<br>
 
      <form [formGroup] = "searchPlayer" (ngSubmit)="onSubmit()">
-        <div class= "formGroup">
+        <div class= "formGroup mh7 pl5 pt2" style="font-size:20px">
                     
                 <div class="typeHead">
                         <input type="text" list="search" name="search" formControlName="search" />
@@ -15,16 +17,48 @@
                                 <option *ngFor="let c of playerList" [value]="c._id"></option>
                             </select>
                         </datalist>
-                    </div>
+                    </div><br>
+                <div>
+                    <button [disabled]="loading" class="btn btn-primary">Submit</button>
 
-                    <button>Submit</button>
+                </div>
             </div>
             
     </form>
-  
+<br>
+    <div *ngIf="value" style="padding-left:32%">
 
-  
-    
-  <!-- </div> -->
+              
+
+            <table style="font-size: 22px; width:35%" class="spacing">
+                <tr>
+                    <td>RUNS</td>
+                    <td>{{playerinfo.runs}}</td>
+                </tr>
+
+                <tr>
+                        <td>BALLLS</td>
+                        <td>{{playerinfo.balls_faced}}</td>
+                    </tr>
+                <tr>
+                    <td>WICKETS</td>
+                    <td>{{playerinfo.wickets}}</td>
+                </tr>
+                <tr>
+                    <td>CATCHES</td>
+                    <td>{{playerinfo.catches}}</td>
+                </tr>
+                <tr>
+                    <td>STUMPING</td>
+                    <td>{{playerinfo.stumping}}</td>
+                </tr>
+
+            </table>
+
+
+        </div>
+
+  </div>
+
 
   
